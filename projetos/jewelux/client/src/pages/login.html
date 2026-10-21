@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt_PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../src/style.css">
+    <script src="https://kit.fontawesome.com/21b08f5882.js" crossorigin="anonymous"></script>
+    <script src="../script.js" defer></script>
+    <title>Login - Jewelux</title>
+</head>
+<body>
+    <a onclick="window.location.href = '../../index.html'" class="close"><i class="fa-solid fa-xmark"></i></a>
+    <div class='form'>
+        <div class='card'>
+            <h1 id="info">Bem vindo/a, inicie a sua sessão</h1>
+            <form>
+                <div>
+                    <label class='login'>Email:</label>
+                    <input type='text' id="email" class='login' required/>
+                </div>
+                <div class="password-container">
+                    <label class='login'>Password:</label>
+                    <input type="password" id="pass" class='login' required/>
+                    <i class="fa-solid fa-eye" id="togglePassword"></i>
+                </div>
+            </form>
+            <div id="btnFormDiv">
+                <button type="submit" id="btnIniciar" value='Login' class="btnForm" onclick="Login()">
+                    Iniciar Sessão
+                </button>
+                <button type="button" id="btnRegistar" value='Registar' class="btnFormRegister" onclick="window.location.href='./signUp.html'">
+                    Registar-se
+                </button>
+            </div>
+            <p id="output"></p>
+        </div>
+    </div>
+</body>
+</html>

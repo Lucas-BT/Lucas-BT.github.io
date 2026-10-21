@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt_PT">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" type="image/png" href="../../img/icon_white.png" sizes="16x16 32x32" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/21b08f5882.js" crossorigin="anonymous"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Catálogo</title>
+        <link rel="stylesheet" href="../style.css">
+        <script src="../campoBusca.js"></script>
+    </head>
+<body>
+    <section id="header">
+        <a href="../../index.html"><img src="../../img/logo_bgremoved.png" class="logo" alt=""></a>
+    
+        <div>
+            <ul id="navbar">
+                <li><a class="active">Catálogo</a></li>
+                <li><a href="#">Categorias</a>
+                    <ul class="dropdown">
+                        <li><a href="categorie.html?category=Homem">Homens</a></li>
+                        <li><a href="categorie.html?category=Mulher">Mulheres</a></li>
+                        <li><a href="categorie.html?category=Criança">Crianças</a></li>
+                    </ul>
+                </li>
+                <li ><a href="#" onclick="window.location.href='aboutUs.html';">Quem Somos?</a></li>
+                <li id="lg-user"><a href="login.html"><i class="fa-solid fa-user"></i></a></li>
+                <li id="lg-cart"><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li id="lg-cart"><a href="wishlist.html"><i class="fa-solid fa-heart"></i></a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <div class="search-container">
+            <input id="searchBar" type="text" placeholder="Pesquisar...">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        </div>
+    </section>
+
+    <section id="catalog" class="section-p1">
+        <div class="pro-container">
+            <!-- Produtos adicionado dinaminamente -->
+        </div>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <h4>Contactos</h4>
+            <p><strong>Endereço:</strong> Rua da Escola de Tecnologia 32a, Castelo Branco</p>
+            <p><strong>Telefone:</strong> +351 920 111 222</p>
+            <p><strong>Horario:</strong> 09:00 - 18:00, Seg - Sab</p>
+            <div class="follow">
+                <h4>Acompanhe-nos em</h4>
+                <div class="icon">
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-pinterest"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>Quem somos?</h4>
+            <a href="#">Sobre Nós</a>
+            <a href="#">Informações de Entrega</a>
+            <a href="#">Politica de Privacidade</a>
+            <a href="../client/src/minuta-termos-e-condicoes.pdf" target="_blank">Termos & Condições</a>
+            <a href="#">Contacte-nos</a>
+        </div>
+
+        <div class="col">
+            <h4>Conta</h4>
+            <a href="#">Sobre Nós</a>
+            <a href="#">Iniciar Sessão</a>
+            <a href="#">Minha Wishlist</a>
+            <a href="#">Rastrear Encomenda</a>
+            <a href="#">Ajuda</a>
+        </div>
+        <div id="payments">
+            <p>Formas de Pagementos Disponiveis</p>
+            <img src="../../img/formas_pagamento.png" alt="">    
+        </div>
+        <div class="copyright">
+            <p>© 2024, Lucas Lukeny - Jewelux</p>
+        </div>
+    </footer>
+ 
+</body>
+</html>

@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maré Alta · Cozinha, Arte &amp; Bar · Alcântara, Lisboa (demo)</title>
+<meta name="description" content="Restaurante, galeria e bar em Alcântara, Lisboa. Menu sazonal, exposições, música ao vivo e reservas online. Projeto de demonstração.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Restaurant","name":"Maré Alta (demo)","servesCuisine":"Portuguesa","priceRange":"€€","address":{"@type":"PostalAddress","addressLocality":"Lisboa","addressRegion":"Alcântara","addressCountry":"PT"},"acceptsReservations":"True"}
+</script>
+<style>
+:root{
+  --ink:#16202e; --ink-2:#2a3647; --cream:#f6f1e7; --paper:#fffdf8;
+  --clay:#c2552d; --clay-dark:#9c3f1e; --tile:#2f5d8a; --muted:#5f6b7a; --line:#e3dccd;
+  --radius:14px; --max:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;font:16px/1.6 Inter,system-ui,sans-serif;color:var(--ink);background:var(--paper)}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;line-height:1.15;margin:0 0 .5em}
+a{color:inherit}
+img,svg{display:block;max-width:100%}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+.en{display:none}
+html[lang=en] .pt{display:none}
+html[lang=en] .en{display:revert}
+:focus-visible{outline:3px solid var(--clay);outline-offset:3px}
+.skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;z-index:99;background:#fff;padding:8px 12px}
+
+.demo-bar{background:var(--ink);color:#d9e2ee;font-size:13px;text-align:center;padding:6px 12px}
+.demo-bar a{color:#fff}
+
+header{position:sticky;top:0;z-index:20;background:rgba(255,253,248,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:16px;height:64px}
+.logo{font-family:Fraunces,serif;font-size:22px;font-weight:600;text-decoration:none;margin-right:auto}
+.logo b{color:var(--clay)}
+.links{display:flex;gap:22px}
+.links a{text-decoration:none;font-weight:500;font-size:15px;color:var(--ink-2)}
+.links a:hover{color:var(--clay)}
+.lang{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 12px;font:600 13px Inter,sans-serif;cursor:pointer}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--clay);color:#fff;text-decoration:none;font-weight:600;padding:12px 20px;border-radius:999px;border:0;cursor:pointer;font-size:15px}
+.btn:hover{background:var(--clay-dark)}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:#fff}
+.nav .btn{padding:9px 16px}
+.burger{display:none;background:none;border:0;padding:8px;cursor:pointer}
+@media (max-width:860px){
+  .links{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;gap:0;background:var(--paper);border-bottom:1px solid var(--line)}
+  .links.open{display:flex}
+  .links a{padding:14px 20px;border-top:1px solid var(--line)}
+  .burger{display:block}
+  .nav .btn{display:none}
+}
+
+.hero{position:relative;overflow:hidden;background:var(--ink);color:var(--cream)}
+.hero .tiles{position:absolute;inset:0;opacity:.16}
+.hero-in{position:relative;padding:96px 0 88px;max-width:680px}
+.kicker{text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:600;color:#f0a27f;margin:0 0 14px}
+.hero h1{font-size:clamp(40px,7vw,72px)}
+.hero p{font-size:18px;color:#d6dbe3;max-width:520px}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.hero .btn.ghost{color:var(--cream);border-color:var(--cream)}
+.hero .btn.ghost:hover{background:var(--cream);color:var(--ink)}
+.facts{display:flex;gap:28px;flex-wrap:wrap;margin-top:40px;font-size:14px;color:#c4ccd7}
+.facts strong{display:block;color:#fff;font-size:15px}
+
+section{padding:80px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:32px}
+.sec-head h2{font-size:clamp(30px,4.5vw,44px);margin:0}
+.sec-head p{color:var(--muted);margin:0;max-width:440px}
+
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.about p{color:var(--ink-2);font-size:17px}
+.about-art{border-radius:var(--radius);overflow:hidden;aspect-ratio:4/5;background:var(--cream)}
+@media (max-width:860px){.about{grid-template-columns:1fr}.about-art{aspect-ratio:16/10}}
+
+#menu{background:var(--cream)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.tab{border:1.5px solid var(--ink);background:transparent;border-radius:999px;padding:8px 16px;font:600 14px Inter,sans-serif;cursor:pointer;color:var(--ink)}
+.tab[aria-selected=true]{background:var(--ink);color:#fff}
+.dishes{display:grid;grid-template-columns:1fr 1fr;gap:4px 48px}
+@media (max-width:760px){.dishes{grid-template-columns:1fr}}
+.dish{padding:18px 0;border-bottom:1px dashed #cfc5b2}
+.dish-top{display:flex;align-items:baseline;gap:10px}
+.dish h3{font-size:19px;margin:0}
+.dish .dots{flex:1;border-bottom:1px dotted #a99d86;transform:translateY(-4px)}
+.dish .price{font-weight:600;white-space:nowrap}
+.dish p{margin:4px 0 0;color:var(--muted);font-size:15px}
+.tags{display:flex;gap:6px;margin-top:6px}
+.tag{font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;background:#fff;border:1px solid var(--line);color:var(--ink-2)}
+.legend{margin-top:22px;font-size:13px;color:var(--muted)}
+
+.events{display:grid;gap:14px}
+.event{display:grid;grid-template-columns:92px 1fr auto;gap:20px;align-items:center;padding:18px;border:1px solid var(--line);border-radius:var(--radius);background:#fff}
+.date{text-align:center;background:var(--ink);color:#fff;border-radius:10px;padding:10px 0}
+.date b{display:block;font:600 28px/1 Fraunces,serif}
+.date span{font-size:12px;text-transform:uppercase;letter-spacing:.1em}
+.event h3{font-size:20px;margin:0 0 4px}
+.event p{margin:0;color:var(--muted);font-size:15px}
+.badge{display:inline-block;font-size:12px;font-weight:600;color:var(--tile);margin-bottom:4px;text-transform:uppercase;letter-spacing:.08em}
+@media (max-width:640px){.event{grid-template-columns:72px 1fr}.event .btn{grid-column:1/-1;justify-content:center}}
+
+#galeria{background:var(--ink);color:var(--cream)}
+#galeria .sec-head p{color:#b9c2ce}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:180px;gap:12px}
+.gallery figure{margin:0;border-radius:12px;overflow:hidden;position:relative}
+.gallery figure.big{grid-column:span 2;grid-row:span 2}
+.gallery figure.wide{grid-column:span 2}
+.gallery figcaption{position:absolute;left:10px;bottom:10px;font-size:12px;background:rgba(22,32,46,.75);padding:3px 9px;border-radius:999px}
+.gallery svg{width:100%;height:100%}
+@media (max-width:760px){.gallery{grid-template-columns:1fr 1fr;grid-auto-rows:140px}}
+
+.contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px}
+.contact dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:12px 18px}
+.contact dt{font-weight:600}
+.contact dd{margin:0;color:var(--ink-2)}
+.map{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);min-height:320px}
+.map iframe{width:100%;height:100%;min-height:320px;border:0}
+.socials{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
+@media (max-width:860px){.contact{grid-template-columns:1fr}}
+
+.reserve{background:var(--clay);color:#fff;border-radius:20px;padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+.reserve h2{font-size:36px}
+.reserve form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.reserve label{font-size:13px;font-weight:600;display:grid;gap:4px}
+.reserve input,.reserve select{font:15px Inter,sans-serif;padding:11px 12px;border-radius:10px;border:0;width:100%}
+.reserve .full{grid-column:1/-1}
+.reserve .btn{background:var(--ink);justify-content:center}
+.reserve .ok{display:none;grid-column:1/-1;background:#fff;color:var(--ink);padding:12px;border-radius:10px}
+@media (max-width:860px){.reserve{grid-template-columns:1fr;padding:28px}.reserve form{grid-template-columns:1fr}}
+
+footer{padding:40px 0 110px;font-size:14px;color:var(--muted);border-top:1px solid var(--line)}
+.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer a{color:var(--ink-2)}
+
+.wa{position:fixed;right:18px;bottom:18px;z-index:30;width:56px;height:56px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.2)}
+.mobile-cta{display:none}
+@media (max-width:860px){
+  .mobile-cta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:25;gap:8px;padding:10px 86px 10px 12px;background:rgba(255,253,248,.96);border-top:1px solid var(--line)}
+  .mobile-cta .btn{flex:1;justify-content:center;padding:12px}
+  .wa{bottom:10px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Saltar para o conteúdo</a>
+<div class="demo-bar">
+  <span class="pt">Projeto de demonstração criado por <a href="../">Lucas Barreto</a>. O restaurante é fictício.</span>
+  <span class="en">Demo project by <a href="../">Lucas Barreto</a>. The restaurant is fictional.</span>
+</div>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top">Maré <b>Alta</b></a>
+    <nav class="links" id="links" aria-label="Principal">
+      <a href="#sobre"><span class="pt">Sobre</span><span class="en">About</span></a>
+      <a href="#menu">Menu</a>
+      <a href="#eventos"><span class="pt">Arte &amp; Eventos</span><span class="en">Art &amp; Events</span></a>
+      <a href="#galeria"><span class="pt">Galeria</span><span class="en">Gallery</span></a>
+      <a href="#contactos"><span class="pt">Contactos</span><span class="en">Contact</span></a>
+    </nav>
+    <button class="lang" id="lang" aria-label="Mudar idioma / Change language">EN</button>
+    <a class="btn" href="#reservar"><span class="pt">Reservar</span><span class="en">Book a table</span></a>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="links">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero" id="top" style="padding:0">
+  <svg class="tiles" aria-hidden="true" width="100%" height="100%">
+    <defs>
+      <pattern id="az" width="80" height="80" patternUnits="userSpaceOnUse">
+        <rect width="80" height="80" fill="none" stroke="#9fc1e6" stroke-width="1"/>
+        <circle cx="40" cy="40" r="22" fill="none" stroke="#9fc1e6" stroke-width="2"/>
+        <path d="M40 8 L48 40 L40 72 L32 40Z M8 40 L40 32 L72 40 L40 48Z" fill="#9fc1e6"/>
+        <circle cx="0" cy="0" r="10" fill="none" stroke="#9fc1e6" stroke-width="2"/>
+        <circle cx="80" cy="0" r="10" fill="none" stroke="#9fc1e6" stroke-width="2"/>
+        <circle cx="0" cy="80" r="10" fill="none" stroke="#9fc1e6" stroke-width="2"/>
+        <circle cx="80" cy="80" r="10" fill="none" stroke="#9fc1e6" stroke-width="2"/>
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#az)"/>
+  </svg>
+  <div class="wrap">
+    <div class="hero-in">
+      <p class="kicker"><span class="pt">Alcântara · Lisboa</span><span class="en">Alcântara · Lisbon</span></p>
+      <h1><span class="pt">Cozinha, arte e bar à beira do Tejo.</span><span class="en">Food, art and drinks by the Tagus.</span></h1>
+      <p><span class="pt">Pratos portugueses da estação, exposições que mudam todos os meses e música ao vivo às sextas.</span><span class="en">Seasonal Portuguese plates, exhibitions that change every month and live music on Fridays.</span></p>
+      <div class="ctas">
+        <a class="btn" href="#reservar"><span class="pt">Reservar mesa</span><span class="en">Book a table</span></a>
+        <a class="btn ghost" href="#menu"><span class="pt">Ver menu</span><span class="en">See the menu</span></a>
+      </div>
+      <div class="facts">
+        <div><strong><span class="pt">Ter–Dom</span><span class="en">Tue–Sun</span></strong>12:30–15:00 · 19:00–00:00</div>
+        <div><strong><span class="pt">Bar</span><span class="en">Bar</span></strong><span class="pt">até à 01:00 sex e sáb</span><span class="en">until 1 am Fri &amp; Sat</span></div>
+        <div><strong>€€</strong><span class="pt">preço médio 25 €</span><span class="en">average 25 €</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sobre">
+  <div class="wrap about">
+    <div>
+      <p class="kicker" style="color:var(--clay)"><span class="pt">O espaço</span><span class="en">The place</span></p>
+      <h2 style="font-size:clamp(30px,4.5vw,44px)"><span class="pt">Um antigo armazém, uma mesa comprida e paredes que contam histórias.</span><span class="en">An old warehouse, a long table and walls that tell stories.</span></h2>
+      <p><span class="pt">Na Maré Alta cozinhamos com produto do mercado e servimos rodeados de obras de artistas de Lisboa. Cada mês há uma nova exposição, e cada sexta um concerto intimista.</span><span class="en">At Maré Alta we cook with market produce and serve surrounded by works from Lisbon artists. Every month there is a new exhibition, and every Friday an intimate concert.</span></p>
+      <p><span class="pt">Venha jantar, fique para um copo.</span><span class="en">Come for dinner, stay for a drink.</span></p>
+    </div>
+    <div class="about-art" aria-hidden="true">
+      <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
+        <rect width="400" height="500" fill="#e9dfcc"/>
+        <rect x="40" y="60" width="150" height="190" fill="#2f5d8a"/>
+        <circle cx="270" cy="150" r="80" fill="#c2552d"/>
+        <rect x="210" y="270" width="150" height="170" fill="#16202e"/>
+        <path d="M40 300 Q120 250 190 320 T 190 440 L40 440Z" fill="#d9a441"/>
+        <circle cx="285" cy="355" r="30" fill="#f6f1e7"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section id="menu">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Menu</h2>
+      <p><span class="pt">Muda com a estação. Informe-nos de alergias ao reservar.</span><span class="en">Changes with the season. Tell us about allergies when booking.</span></p>
+    </div>
+    <div class="tabs" role="tablist" id="tabs"></div>
+    <div class="dishes" id="dishes" role="tabpanel" aria-live="polite"></div>
+    <p class="legend"><span class="pt">V vegetariano · VG vegano · SG sem glúten. Preços com IVA incluído.</span><span class="en">V vegetarian · VG vegan · GF gluten free. Prices include VAT.</span></p>
+  </div>
+</section>
+
+<section id="eventos">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2><span class="pt">Arte &amp; Eventos</span><span class="en">Art &amp; Events</span></h2>
+      <p><span class="pt">Entrada livre nas exposições. Concertos com reserva de mesa.</span><span class="en">Exhibitions are free. Concerts with a table booking.</span></p>
+    </div>
+    <div class="events" id="events"></div>
+  </div>
+</section>
+
+<section id="galeria">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2><span class="pt">Galeria</span><span class="en">Gallery</span></h2>
+      <p><span class="pt">Obras em exposição este mês. Pergunte ao staff pelos preços.</span><span class="en">Works on show this month. Ask our staff for prices.</span></p>
+    </div>
+    <div class="gallery">
+      <figure class="big"><svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice"><rect width="400" height="400" fill="#2f5d8a"/><circle cx="200" cy="170" r="110" fill="#f6f1e7"/><rect x="0" y="260" width="400" height="140" fill="#c2552d"/><path d="M0 260 Q100 220 200 260 T400 260" fill="none" stroke="#16202e" stroke-width="10"/></svg><figcaption>Rita Mar · “Maré”</figcaption></figure>
+      <figure><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice"><rect width="200" height="200" fill="#d9a441"/><rect x="40" y="40" width="120" height="120" fill="#16202e" transform="rotate(12 100 100)"/></svg><figcaption>J. Silva · “Cais”</figcaption></figure>
+      <figure><svg viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice"><rect width="200" height="200" fill="#f6f1e7"/><circle cx="70" cy="80" r="45" fill="#c2552d"/><circle cx="135" cy="125" r="45" fill="#2f5d8a" opacity=".9"/></svg><figcaption>Ana Lobo · “Dois”</figcaption></figure>
+      <figure class="wide"><svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice"><rect width="400" height="200" fill="#c2552d"/><path d="M0 150 L80 70 L150 130 L230 40 L320 120 L400 60 L400 200 L0 200Z" fill="#16202e"/><circle cx="330" cy="50" r="22" fill="#f6f1e7"/></svg><figcaption>Rui Costa · “Alcântara ao fim do dia”</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="reservar">
+  <div class="wrap">
+    <div class="reserve">
+      <div>
+        <h2><span class="pt">Reserve a sua mesa</span><span class="en">Book your table</span></h2>
+        <p><span class="pt">Confirmamos por email ou WhatsApp em menos de 2 horas. Grupos acima de 8 pessoas: ligue-nos.</span><span class="en">We confirm by email or WhatsApp within 2 hours. Groups over 8: please call us.</span></p>
+      </div>
+      <form id="form">
+        <label><span class="pt">Nome</span><span class="en">Name</span><input required name="nome" autocomplete="name"></label>
+        <label><span class="pt">Telemóvel</span><span class="en">Phone</span><input required name="tel" type="tel" autocomplete="tel"></label>
+        <label><span class="pt">Data</span><span class="en">Date</span><input required name="data" type="date"></label>
+        <label><span class="pt">Hora</span><span class="en">Time</span>
+          <select name="hora"><option>12:30</option><option>13:30</option><option>19:30</option><option selected>20:30</option><option>21:30</option></select>
+        </label>
+        <label class="full"><span class="pt">Pessoas</span><span class="en">Guests</span>
+          <select name="pessoas"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select>
+        </label>
+        <button class="btn full" type="submit"><span class="pt">Pedir reserva</span><span class="en">Request booking</span></button>
+        <p class="ok" id="ok" role="status"><span class="pt">Demonstração: no site real este pedido seguia por email ou para o TheFork.</span><span class="en">Demo: on the real site this request would go by email or to TheFork.</span></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="contactos">
+  <div class="wrap contact">
+    <div>
+      <h2 style="font-size:clamp(30px,4.5vw,44px)"><span class="pt">Contactos</span><span class="en">Contact</span></h2>
+      <dl>
+        <dt><span class="pt">Morada</span><span class="en">Address</span></dt><dd>Rua Fictícia, 00 · 1300-000 Lisboa</dd>
+        <dt><span class="pt">Telefone</span><span class="en">Phone</span></dt><dd>+351 210 000 000</dd>
+        <dt>Email</dt><dd>reservas@exemplo.pt</dd>
+        <dt><span class="pt">Horário</span><span class="en">Hours</span></dt><dd><span class="pt">Ter–Dom 12:30–15:00 e 19:00–00:00 · Seg fechado</span><span class="en">Tue–Sun 12:30–3 pm and 7 pm–midnight · Closed Mon</span></dd>
+        <dt><span class="pt">Transportes</span><span class="en">Getting here</span></dt><dd><span class="pt">Comboio Alcântara-Mar · Elétrico 15E</span><span class="en">Alcântara-Mar train · Tram 15E</span></dd>
+      </dl>
+      <div class="socials">
+        <a class="btn ghost" href="https://www.google.com/maps/dir/?api=1&destination=Alc%C3%A2ntara%2C+Lisboa" target="_blank" rel="noopener"><span class="pt">Como chegar</span><span class="en">Directions</span></a>
+        <a class="btn ghost" href="#" aria-label="Instagram">Instagram</a>
+        <a class="btn ghost" href="#" aria-label="Facebook">Facebook</a>
+      </div>
+    </div>
+    <div class="map">
+      <iframe title="Mapa / Map" loading="lazy" src="https://www.google.com/maps?q=Alc%C3%A2ntara,+Lisboa&z=15&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>© 2026 Maré Alta (demo) · <span class="pt">Design e desenvolvimento</span><span class="en">Design &amp; development</span>: <a href="../">Lucas Barreto</a></div>
+    <div><a href="#"><span class="pt">Política de privacidade</span><span class="en">Privacy policy</span></a> · <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener"><span class="pt">Livro de Reclamações</span><span class="en">Complaints Book</span></a></div>
+  </div>
+</footer>
+
+<div class="mobile-cta">
+  <a class="btn" href="#reservar"><span class="pt">Reservar</span><span class="en">Book</span></a>
+  <a class="btn ghost" href="tel:+351210000000"><span class="pt">Ligar</span><span class="en">Call</span></a>
+</div>
+<a class="wa" href="https://wa.me/351900000000" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.4-.3Z"/></svg>
+</a>
+
+<script>
+const MENU = [
+  {pt:"Petiscos", en:"Small plates", items:[
+    {pt:"Pão da casa, manteiga de alga", en:"House bread, seaweed butter", dpt:"Fermentação lenta, servido morno", den:"Slow-fermented, served warm", p:"3,50", t:["V"]},
+    {pt:"Pica-pau de novilho", en:"Pica-pau beef bites", dpt:"Pickles da casa, molho de cerveja", den:"House pickles, beer sauce", p:"11,00", t:[]},
+    {pt:"Peixinhos da horta", en:"Tempura green beans", dpt:"Maionese de limão", den:"Lemon mayo", p:"7,50", t:["V"]},
+    {pt:"Ameijoas à Bulhão Pato", en:"Clams Bulhão Pato", dpt:"Alho, coentros, vinho branco", den:"Garlic, coriander, white wine", p:"14,00", t:["SG"]}
+  ]},
+  {pt:"Pratos", en:"Mains", items:[
+    {pt:"Polvo à lagareiro", en:"Octopus lagareiro", dpt:"Batata a murro, azeite e alho", den:"Smashed potatoes, olive oil and garlic", p:"22,00", t:["SG"]},
+    {pt:"Arroz de cogumelos e castanha", en:"Mushroom and chestnut rice", dpt:"Cogumelos da época, queijo da Serra opcional", den:"Seasonal mushrooms, optional Serra cheese", p:"16,50", t:["V","SG"]},
+    {pt:"Bacalhau confitado", en:"Confit codfish", dpt:"Grão, espinafres e ovo a baixa temperatura", den:"Chickpeas, spinach and slow-cooked egg", p:"19,50", t:[]},
+    {pt:"Bochecha de porco preto", en:"Black pork cheek", dpt:"Puré de abóbora, jus de vinho tinto", den:"Pumpkin purée, red wine jus", p:"18,00", t:["SG"]}
+  ]},
+  {pt:"Sobremesas", en:"Desserts", items:[
+    {pt:"Pastel de nata da casa", en:"House custard tart", dpt:"Canela e açúcar em pó", den:"Cinnamon and icing sugar", p:"3,00", t:["V"]},
+    {pt:"Mousse de chocolate e azeite", en:"Chocolate and olive oil mousse", dpt:"Flor de sal", den:"Sea salt flakes", p:"6,00", t:["VG","SG"]},
+    {pt:"Pudim Abade de Priscos", en:"Abade de Priscos pudding", dpt:"Receita minhota com vinho do Porto", den:"Northern recipe with Port wine", p:"6,50", t:["SG"]}
+  ]},
+  {pt:"Bar", en:"Bar", items:[
+    {pt:"Copo de vinho da casa", en:"House wine by the glass", dpt:"Branco, tinto ou verde", den:"White, red or vinho verde", p:"4,50", t:["VG"]},
+    {pt:"Porto Tónico", en:"Port Tonic", dpt:"Porto branco, tónica, hortelã", den:"White Port, tonic, mint", p:"7,00", t:["VG"]},
+    {pt:"Maré Alta (cocktail)", en:"Maré Alta (cocktail)", dpt:"Gin, ginja, limão e alecrim", den:"Gin, sour cherry, lemon and rosemary", p:"9,00", t:["VG"]},
+    {pt:"Limonada da casa", en:"House lemonade", dpt:"Sem álcool", den:"Alcohol-free", p:"3,50", t:["VG"]}
+  ]}
+];
+const EVENTS = [
+  {d:"07", mpt:"Nov", men:"Nov", bpt:"Música ao vivo", ben:"Live music", pt:"Fado vadio à luz das velas", en:"Candlelit open fado night", dpt:"Sexta · 21:30 · com jantar", den:"Friday · 9:30 pm · with dinner"},
+  {d:"14", mpt:"Nov", men:"Nov", bpt:"Inauguração", ben:"Opening", pt:"“Maré”: pintura de Rita Mar", en:"“Maré”: paintings by Rita Mar", dpt:"Sexta · 19:00 · entrada livre", den:"Friday · 7 pm · free entry"},
+  {d:"22", mpt:"Nov", men:"Nov", bpt:"Jantar", ben:"Dinner", pt:"Jantar a quatro mãos com produtor do Douro", en:"Four-hands dinner with a Douro winemaker", dpt:"Sábado · 20:00 · menu fixo 45 €", den:"Saturday · 8 pm · set menu 45 €"}
+];
+const lang = () => document.documentElement.lang;
+let cur = 0;
+function renderMenu(){
+  const L = lang();
+  document.getElementById('tabs').innerHTML = MENU.map((c,i)=>
+    `<button class="tab" role="tab" aria-selected="${i===cur}" data-i="${i}">${c[L]}</button>`).join('');
+  document.getElementById('dishes').innerHTML = MENU[cur].items.map(x=>{
+    const tags = x.t.map(t=>`<span class="tag">${L==='en'&&t==='SG'?'GF':t}</span>`).join('');
+    return `<div class="dish"><div class="dish-top"><h3>${x[L]}</h3><span class="dots"></span><span class="price">${x.p} €</span></div><p>${L==='en'?x.den:x.dpt}</p>${tags?`<div class="tags">${tags}</div>`:''}</div>`;
+  }).join('');
+}
+function renderEvents(){
+  const L = lang();
+  document.getElementById('events').innerHTML = EVENTS.map(e=>
+    `<article class="event"><div class="date"><b>${e.d}</b><span>${L==='en'?e.men:e.mpt}</span></div>
+     <div><span class="badge">${L==='en'?e.ben:e.bpt}</span><h3>${e[L]}</h3><p>${L==='en'?e.den:e.dpt}</p></div>
+     <a class="btn ghost" href="#reservar">${L==='en'?'Book':'Reservar'}</a></article>`).join('');
+}
+function setLang(L){
+  document.documentElement.lang = L;
+  document.getElementById('lang').textContent = L==='pt' ? 'EN' : 'PT';
+  try{ localStorage.setItem('lang', L) }catch(e){}
+  renderMenu(); renderEvents();
+}
+document.getElementById('tabs').addEventListener('click', e=>{
+  const b = e.target.closest('.tab'); if(!b) return; cur = +b.dataset.i; renderMenu();
+});
+document.getElementById('lang').addEventListener('click', ()=> setLang(lang()==='pt'?'en':'pt'));
+const burger = document.getElementById('burger'), links = document.getElementById('links');
+burger.addEventListener('click', ()=>{ const o = links.classList.toggle('open'); burger.setAttribute('aria-expanded', o) });
+links.addEventListener('click', e=>{ if(e.target.closest('a')){ links.classList.remove('open'); burger.setAttribute('aria-expanded', false) } });
+document.getElementById('form').addEventListener('submit', e=>{ e.preventDefault(); document.getElementById('ok').style.display='block' });
+let saved = 'pt'; try{ saved = localStorage.getItem('lang') || 'pt' }catch(e){}
+setLang(saved);
+</script>
+</body>
+</html>
